@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 
 class PixelOpsTest {
     @Test
-    fun testWeightedChannelSum() {
+    fun test_weighted_channel_sum() {
         // Midpoint
         assertEquals(15u.toUByte(), weightedChannelSum(10u.toUByte(), 20u.toUByte(), 0.5f, 0.5f))
         // Mainly left
@@ -17,7 +17,7 @@ class PixelOpsTest {
     }
 
     @Test
-    fun testWeightedSumRgb() {
+    fun test_weighted_sum_rgb() {
         val left = Rgb(10u.toUByte(), 20u.toUByte(), 30u.toUByte())
         val right = Rgb(100u.toUByte(), 80u.toUByte(), 60u.toUByte())
 
@@ -26,7 +26,7 @@ class PixelOpsTest {
     }
 
     @Test
-    fun testInterpolateRgb() {
+    fun test_interpolate_rgb() {
         val left = Rgb(10u.toUByte(), 20u.toUByte(), 30u.toUByte())
         val right = Rgb(100u.toUByte(), 80u.toUByte(), 60u.toUByte())
 

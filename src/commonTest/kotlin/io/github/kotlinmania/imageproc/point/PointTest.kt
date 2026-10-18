@@ -8,7 +8,7 @@ import kotlin.test.assertTrue
 
 class PointTest {
     @Test
-    fun lineFromPoints() {
+    fun line_from_points() {
         val p = Point.new(5.0, 7.0)
         val q = Point.new(10.0, 3.0)
         assertEquals(
@@ -22,14 +22,14 @@ class PointTest {
     }
 
     @Test
-    fun distanceBetweenLineAndPoint() {
+    fun distance_between_line_and_point() {
         val actual = Line(a = 8.0, b = 7.0, c = 5.0).distanceFromPoint(Point.new(2.0, 3.0))
         val expected = 3.9510276472
         assertTrue(abs(actual - expected) < 1e-10)
     }
 
     @Test
-    fun distanceAndRotation() {
+    fun distance_and_rotation() {
         val p = Point.new(0.0, 0.0)
         val q = Point.new(3.0, 4.0)
         assertEquals(5.0, distance(p, q))

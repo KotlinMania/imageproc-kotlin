@@ -10,14 +10,14 @@ import kotlin.test.assertTrue
 
 class RectTest {
     @Test
-    fun testRejectsEmptyRectangle() {
+    fun test_rejects_empty_rectangle() {
         assertFailsWith<IllegalArgumentException> {
             Rect.at(1, 2).ofSize(0u, 1u)
         }
     }
 
     @Test
-    fun testContainsInt() {
+    fun test_contains_i32() {
         val r = Rect.at(5, 5).ofSize(6u, 6u)
         assertTrue(r.contains(5, 5))
         assertTrue(r.contains(10, 10))
@@ -26,14 +26,14 @@ class RectTest {
     }
 
     @Test
-    fun testContainsFloat() {
+    fun test_contains_f32() {
         val r = Rect.at(5, 5).ofSize(6u, 6u)
         assertTrue(r.contains(5f, 5f))
         assertFalse(r.contains(10.1f, 10f))
     }
 
     @Test
-    fun testIntersect() {
+    fun test_intersect() {
         val r = Rect.at(4, 5).ofSize(6u, 7u)
         assertEquals(r, r.intersect(r))
 
