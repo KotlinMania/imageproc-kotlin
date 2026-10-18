@@ -7,13 +7,13 @@ let package = Package(
         .macOS(.v15),
     ],
     dependencies: [
-        .package(name: "Template", path: "../build/SPMPackage/macosArm64/Debug")
+        .package(name: "Imageproc", path: "../build/SPMPackage/macosArm64/Debug")
     ],
     targets: [
         .testTarget(
             name: "SwiftTestHarnessTests",
             dependencies: [
-                .product(name: "TemplateLibrary", package: "Template")
+                .product(name: "ImageprocLibrary", package: "Imageproc")
             ],
             swiftSettings: [
                 .unsafeFlags([
@@ -23,7 +23,7 @@ let package = Package(
             linkerSettings: [
                 .unsafeFlags([
                     "-L", "../build/swift-test",
-                    "-lTemplate",
+                    "-lImageproc",
                     "-F", "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
                     "-Xlinker", "-rpath", "-Xlinker", "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
                     "-Xlinker", "-rpath", "-Xlinker", "/Library/Developer/CommandLineTools/Library/Developer/usr/lib",
