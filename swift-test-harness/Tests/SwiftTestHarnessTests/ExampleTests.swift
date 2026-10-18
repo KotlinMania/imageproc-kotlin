@@ -1,21 +1,21 @@
 #if canImport(Testing)
 import Testing
-import Template
+import Imageproc
 
-@Suite("Template Swift Export Tests")
-struct TemplateExportTests {
-    @Test("Template swift module imported cleanly")
+@Suite("Imageproc Swift Export Tests")
+struct ImageprocExportTests {
+    @Test("Imageproc swift module imported cleanly")
     func testSwiftModuleLoads() throws {
-        #expect(Bool(true), "Template swift module imported cleanly")
+        #expect(Bool(true), "Imageproc swift module imported cleanly")
     }
 }
 #elseif canImport(XCTest)
 import XCTest
-import Template
+import Imageproc
 
-final class TemplateExportTests: XCTestCase {
+final class ImageprocExportTests: XCTestCase {
     func testSwiftModuleLoads() throws {
-        XCTAssertTrue(true, "Template swift module imported cleanly")
+        XCTAssertTrue(true, "Imageproc swift module imported cleanly")
     }
 }
 #endif
