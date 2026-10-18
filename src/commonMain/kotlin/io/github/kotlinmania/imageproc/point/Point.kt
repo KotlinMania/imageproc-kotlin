@@ -47,6 +47,24 @@ public operator fun Point<Double>.plus(other: Point<Double>): Point<Double> =
 public operator fun Point<Double>.minus(other: Point<Double>): Point<Double> =
     Point(this.x - other.x, this.y - other.y)
 
+@JvmName("addInt")
+public fun Point<Int>.add(other: Point<Int>): Point<Int> = this + other
+
+@JvmName("subInt")
+public fun Point<Int>.sub(other: Point<Int>): Point<Int> = this - other
+
+@JvmName("addFloat")
+public fun Point<Float>.add(other: Point<Float>): Point<Float> = this + other
+
+@JvmName("subFloat")
+public fun Point<Float>.sub(other: Point<Float>): Point<Float> = this - other
+
+@JvmName("addDouble")
+public fun Point<Double>.add(other: Point<Double>): Point<Double> = this + other
+
+@JvmName("subDouble")
+public fun Point<Double>.sub(other: Point<Double>): Point<Double> = this - other
+
 public fun Point<out Number>.toDouble(): Point<Double> =
     Point(this.x.toDouble(), this.y.toDouble())
 
@@ -55,6 +73,12 @@ public fun Point<out Number>.toInt(): Point<Int> =
 
 public fun Point<out Number>.toShort(): Point<Short> =
     Point(this.x.toShort(), this.y.toShort())
+
+public fun Point<out Number>.to_f64(): Point<Double> = toDouble()
+
+public fun Point<out Number>.to_i32(): Point<Int> = toInt()
+
+public fun Point<out Number>.to_i16(): Point<Short> = toShort()
 
 /**
  * Returns the Euclidean distance between two points.

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 class DefinitionsTest {
     @Test
-    fun testClampFloatUByte() {
+    fun test_clamp_f32_u8() {
         val t: UByte = Clamp.clampUByte(255f)
         assertEquals(255u.toUByte(), t)
         val u: UByte = Clamp.clampUByte(300f)
@@ -18,7 +18,7 @@ class DefinitionsTest {
     }
 
     @Test
-    fun testClampFloatUShort() {
+    fun test_clamp_f32_u16() {
         val t: UShort = Clamp.clampUShort(65535f)
         assertEquals(65535u.toUShort(), t)
         val u: UShort = Clamp.clampUShort(300000f)
